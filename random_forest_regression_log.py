@@ -180,9 +180,9 @@ for i in test_dict:
     X_test = test_dict[i].copy()
 
     # X_tr, X_te, Y_tr, Y_te = train_test_split(X_train, Y_train, test_size=0.4)
-    # lreg = LinearRegression()
-    # lreg.fit(X_tr, Y_tr)
-    # Y_pr = lreg.predict(X_te)
+    # random_forest = RandomForestRegressor()
+    # random_forest.fit(X_tr, Y_tr)
+    # Y_pr = random_forest.predict(X_te)
     # print(rmspe(y_true=Y_te, y_pred=Y_pr))
 
     store_ids = X_test["Id"]
@@ -190,9 +190,9 @@ for i in test_dict:
 
     X_test = X_test.reindex(columns=X_train.columns, fill_value=0)
 
-    randforestreg = RandomForestRegressor()
-    randforestreg.fit(X_train, Y_train)
-    Y_pred = randforestreg.predict(X_test)
+    random_forest = RandomForestRegressor()
+    random_forest.fit(X_train, Y_train)
+    Y_pred = random_forest.predict(X_test)
 
     Y_pred = np.exp(Y_pred) - 1
 
