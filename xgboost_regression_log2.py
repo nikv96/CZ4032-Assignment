@@ -1,6 +1,6 @@
 # xgboostregressor_log3.py
 """
-Score: 0.12511
+Private Score: 0.12511
 """
 
 import datetime as dt
@@ -186,7 +186,7 @@ print("Model saved to models/xgboost_regression_log2.pkl")
 
 print("Making predictions...")
 
-predictions = regressor.predict(np.array(X_test))
+predictions = regressor.predict(np.array(test_df[features]))
 result = pd.DataFrame({"Id": test_df["Id"], "Sales": np.expm1(predictions)})
 result.to_csv("predictions/xgboost_regression_log2.csv", index=False)
 

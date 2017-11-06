@@ -1,6 +1,6 @@
 # xgboost_regression_log.py
 """
-Score: 0.12727
+Private Score: 0.12727
 """
 
 import datetime as dt

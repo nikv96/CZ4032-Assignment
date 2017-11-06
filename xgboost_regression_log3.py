@@ -1,6 +1,6 @@
 # xgboostregressor_log5.py
 """
-Score: 0.12305
+Private Score: 0.12305
 """
 
 import pickle
