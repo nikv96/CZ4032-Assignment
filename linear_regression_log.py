@@ -1,7 +1,7 @@
 # linearregression-independent-log.py
 
 """
-Score: 0.13741
+Private Score: 0.15522
 """
 
 import datetime as dt
