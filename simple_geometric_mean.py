@@ -95,8 +95,10 @@ Features: Store, DayOfWeek, Promo
 
 columns = ["Store", "DayOfWeek", "Promo"]
 
-geomeans = pd.concat([training_df[(training_df.Sales != 0) & (training_df.DayOfWeek != 7)].groupby(columns).agg({"Sales": lambda x: np.exp(scipy.stats.mstats.gmean(
-    np.log(x + 1))) - 1}), training_df[training_df.DayOfWeek == 7].groupby(columns).agg({"Sales": lambda x: np.exp(scipy.stats.mstats.gmean(np.log(x + 1))) - 1})])
+geomeans = pd.concat([training_df[(training_df.Sales != 0) & (training_df.DayOfWeek != 7)].groupby(columns)
+                      .agg({"Sales": lambda x: np.exp(scipy.stats.mstats.gmean(np.log(x + 1))) - 1}),
+                      training_df[training_df.DayOfWeek == 7].groupby(columns)
+                      .agg({"Sales": lambda x: np.exp(scipy.stats.mstats.gmean(np.log(x + 1))) - 1})])
 geomeans = geomeans.reset_index()
 
 test_df_modified = pd.merge(test_df, geomeans, on=columns, how="left")
