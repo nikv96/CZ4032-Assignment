@@ -140,12 +140,6 @@ def rmspe(y_true, y_pred):
 Treating each store as an independent regression problem, loop through all stores training the model for the particular store and predicting its sales value.
 
 Features: Promo, SchoolHoliday, DayOfWeek (one-hot encoded), StateHoliday (one-hot encoded)
-
-Assumptions:
-- The Year-Month has no effect on the sales as testing data is only for 2015-08 & 2015-09.
-- The store's opening/closing dates does not affect the store's performance. For example, a store that was closed yesterday will not get more sales today because of that.
-- The competition of each store will affect it consistently, hence, it does not matter.
-- Each store's sales value is independent of the other stores and can be treated as independent regression problems.
 """
 
 print("Making predictions...")

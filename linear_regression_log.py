@@ -166,11 +166,6 @@ Advantages of using logarithm:
 - Function is smooth and the function is symbolically easier
 
 Features: Promo, SchoolHoliday, Year, Month, DayOfWeek (one-hot encoded), StateHoliday (one-hot encoded), AvgCustStore, AvgCustStoreMonth
-
-Assumptions:
-- The store's opening/closing dates does not affect the store's performance. For example, a store that was closed yesterday will not get more sales today because of that.
-- The competition of each store will affect it consistently, hence, it does not matter.
-- Each store's sales value is independent of the other stores and can be treated as independent regression problems.
 """
 
 print("Making predictions...")

@@ -91,9 +91,6 @@ test_df["Open"][is_nan(test_df["Open"])] = (test_df["DayOfWeek"] != 7).astype(in
 This model simply calculates the geometric mean value for every ["Store", "DayOfWeek", "Promo"] combination and assigns that value as the prediction for every ["Store", "DayOfWeek", "Promo"] combination in the test data.
 
 Features: Store, DayOfWeek, Promo
-
-Assumptions:
-- The only factors that significantly affect the sales in a particular store are "DayOfWeek" & "Promo".
 """
 
 columns = ["Store", "DayOfWeek", "Promo"]
