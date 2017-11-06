@@ -112,9 +112,9 @@ fig, (axis1, axis2) = plt.subplots(2, 1, sharex=True, figsize=(15, 16))
 ax1 = average_sales.plot(legend=True, ax=axis1, marker="o", title="Average Sales")
 ax1.set_xticks(range(len(average_sales)))
 ax1.set_xticklabels(average_sales.index.tolist(), rotation=90)
-ax1.set(ylabel="Sales")
+ax1.set(ylabel="Average Sales")
 ax2 = pct_change_sales.plot(legend=True, ax=axis2, marker="o", rot=90, colormap="summer", title="Sales Percent Change")
-ax1.set(xlabel="Year-Month", ylabel="Percentage Change")
+ax2.set(xlabel="Year-Month", ylabel="Percentage Change")
 fig.tight_layout()
 fig.savefig("plots/Avg. Sales & Percentage Change (by Year-Month).png", dpi=fig.dpi)
 fig.clf()
@@ -548,7 +548,7 @@ training_df = pd.get_dummies(training_df, columns=["DayOfWeek", "StateHoliday"])
 # Generate correlation matrix for training_df
 corr = training_df.corr()
 fig, (axis1) = plt.subplots(figsize=(15, 15))
-sns.heatmap(corr, square=True, ax=axis1)
+sns.heatmap(corr, square=True, ax=axis1, linewidths=.5, cmap=plt.cm.coolwarm)
 plt.yticks(rotation=0)
 plt.xticks(rotation=90)
 fig.tight_layout()
@@ -569,7 +569,8 @@ store_piv = pd.pivot_table(training_df, values="Sales", index="YearMonth", colum
 start_store = 1
 end_store = 1115
 fig, (axis1) = plt.subplots(1, 1, figsize=(100, 100))
-sns.heatmap(store_piv[list(range(start_store, end_store + 1))].corr(), square=True, ax=axis1)
+sns.heatmap(store_piv[list(range(start_store, end_store + 1))].corr(), square=True,
+            ax=axis1, linewidths=.5, cmap=plt.cm.coolwarm)
 fig.tight_layout()
 fig.savefig("plots/Correlation Matrix (All Stores).png")
 fig.clf()
@@ -580,7 +581,8 @@ print("Plotted Correlation Matrix (All Stores)")
 start_store = 1
 end_store = 100
 fig, (axis1) = plt.subplots(1, 1, figsize=(100, 100))
-sns.heatmap(store_piv[list(range(start_store, end_store + 1))].corr(), square=True, ax=axis1)
+sns.heatmap(store_piv[list(range(start_store, end_store + 1))].corr(), square=True,
+            ax=axis1, linewidths=.5, cmap=plt.cm.coolwarm)
 fig.tight_layout()
 fig.savefig("plots/Correlation Matrix (Stores 1 - 100).png")
 fig.clf()
