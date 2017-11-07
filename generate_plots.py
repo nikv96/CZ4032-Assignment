@@ -520,22 +520,22 @@ print("Plotted Avg. Sales & Customers (by Promo2)")
 # Generate plot for CompetitionDistance vs. Avg. Sales
 fig, (axis1) = plt.subplots(1, 1, figsize=(15, 8))
 ax = store_df.plot(kind="scatter", x="CompetitionDistance", y="AvgSales", ax=axis1)
-ax.set(xlabel="Competition Distance", ylabel="Average Sales")
+ax.set(xlabel="Competition Distance", ylabel="Sales")
 fig.tight_layout()
-fig.savefig("plots/Competition Distance vs. Avg. Sales.png", dpi=fig.dpi)
+fig.savefig("plots/Competition Distance vs. Sales.png", dpi=fig.dpi)
 fig.clf()
 plt.close(fig)
-print("Plotted Competition Distance vs. Avg. Sales")
+print("Plotted Competition Distance vs. Sales")
 
 # Generate plot for CompetitionDistance vs. Avg. Customers
 fig, (axis1) = plt.subplots(1, 1, figsize=(15, 8))
 ax = store_df.plot(kind="scatter", x="CompetitionDistance", y="AvgCustomers", ax=axis1)
-ax.set(xlabel="Competition Distance", ylabel="Average Customers")
+ax.set(xlabel="Competition Distance", ylabel="No. of Customers")
 fig.tight_layout()
-fig.savefig("plots/Competition Distance vs. Avg. Customers.png", dpi=fig.dpi)
+fig.savefig("plots/Competition Distance vs. No. of Customers.png", dpi=fig.dpi)
 fig.clf()
 plt.close(fig)
-print("Plotted Competition Distance vs. Avg. Customers")
+print("Plotted Competition Distance vs. No. of Customers")
 
 
 ###########################################
