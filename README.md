@@ -1,8 +1,18 @@
 # Predicting Sales of Chain Stores 
 
-> This repository contains all code, saved models and plots used in the CZ4032 Data Analytics and Mining course at NTU.
+> This repository contains all code, saved models and plots used in the CZ 4032 Data Analytics and Mining course at NTU.
 
 The Rossmann Store Sales problem is a [Kaggle Competition](https://www.kaggle.com/c/rossmann-store-sales). The challenge requires participants to forecast sales of Rossmann over a period of 6 weeks given historical data of 1,115 stores located across Germany.
+
+## Team
+
+CZ 4032 Group 7, AY 17/18 Semester 1
+
+1. Nikhil Venkatesh ([nikv96](https://github.com/nikv96))
+2. Suyash Lakhotia ([SuyashLakhotia](https://github.com/SuyashLakhotia))
+3. Virat Chopra ([chopravirat](https://github.com/chopravirat))
+4. Priyanshu Singh ([singhpriyanshu5](https://github.com/singhpriyanshu5))
+5. Shantanu Kamath ([ShantanuKamath](https://github.com/ShantanuKamath))
 
 ## Setup
 
@@ -35,11 +45,3 @@ $ python ModelType/model-name.py
 ```
 
 The code will automatically generate the output predictions in `predictions/`. The generated `.csv` file can be uploaded to Kaggle to get the private & public RMSPE scores.
-
-## Team
-
-1. Nikhil Venkatesh ([nikv96](https://github.com/nikv96))
-2. Suyash Lakhotia ([SuyashLakhotia](https://github.com/SuyashLakhotia))
-3. Virat Chopra ([chopravirat](https://github.com/chopravirat))
-4. Priyanshu Singh ([singhpriyanshu5](https://github.com/singhpriyanshu5))
-5. Shantanu Kamath ([ShantanuKamath](https://github.com/ShantanuKamath))
