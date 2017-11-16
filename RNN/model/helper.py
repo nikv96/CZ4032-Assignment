@@ -1,24 +1,22 @@
-import pickle
-import pandas as pd
 import numpy as np
-import random
 
 
-def get_data_sequence(datam, columns, n_prev=10):
+def obtain_data_sequence(new_data, columns, num_of_prevs=10):
 
-    docX, docY = [], []
-    lendata = len(datam)
-    for i in range(lendata - n_prev):
-        docX.append(datam[columns].iloc[i:i + n_prev].as_matrix())
-        docY.append(datam[['Sales']].iloc[i + n_prev])
-    return np.array(docX), np.array(docY)
-
-def train_test_split(df, test_size=0.1):
-    n_examples = int(round(len(df) * (1 - test_size)))
-    data_train = df.iloc[0:n_examples]
-    data_test = df.iloc[n_examples:]
-    return (data_train, data_test)
+    Xdoc, Ydoc = [], []
+    lendata = len(new_data)
+    for i in range(lendata - num_of_prevs):
+        Xdoc.append(new_data[columns].iloc[i:i + num_of_prevs].as_matrix())
+        Ydoc.append(new_data[['Sales']].iloc[i + num_of_prevs])
+    return np.array(Xdoc), np.array(Ydoc)
 
 
-def store_results(dataframe, output_file):
-    dataframe[['Id', 'Sales']].to_csv(output_file, index=False)
+def split_test_train(df, test_size=0.1):
+    n_patterns = int(round(len(df) * (1 - test_size)))
+    train_data = df.iloc[0:n_patterns]
+    test_data = df.iloc[n_patterns:]
+    return (train_data, test_data)
+
+
+def store_results(dataframe, out_file):
+    dataframe[['Id', 'Sales']].to_csv(out_file, index=False)

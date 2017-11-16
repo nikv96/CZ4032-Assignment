@@ -87,10 +87,10 @@ hdf = HDFStore(data_dir + 'data.h5')
 data_train = hdf['data_train']
 data_train['Date'] = pd.to_datetime(data_train.Date)
 data_train = data_train.ix[pd.to_datetime(data_train.Date).sort_values().index]
-(DataTr, DataTe) = train_test_split(data_train, 0.00)
+(DataTrain, DataTest) = split_test_train(data_train, 0.00)
 
 print('Getting data ...')
-stores = DataTr['Store'].unique()
+stores = DataTrain['Store'].unique()
 
 big_x = []
 big_y = []
@@ -99,8 +99,8 @@ print('Creating data...')
 for store in tqdm(stores):
     i = i + 1
     print(i)
-    data = DataTr[DataTr.Store == store]
-    x, y = get_data_sequence(data, columns, n_prev=7)
+    data = DataTrain[DataTrain.Store == store]
+    x, y = obtain_data_sequence(data, columns, n_prev=7)
     big_x.append(x)
     big_y.append(y)
 
